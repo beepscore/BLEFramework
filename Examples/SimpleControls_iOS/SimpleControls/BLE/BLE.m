@@ -9,7 +9,7 @@
  
  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  
-*/
+ */
 
 #import "BLE.h"
 #import "BLEDefines.h"
@@ -65,8 +65,8 @@ static int rssi = 0;
     if (!service)
     {
         NSLog(@"Could not find service with UUID %@ on peripheral with UUID %@",
-               [self CBUUIDToString:serviceUUID],
-               p.identifier.UUIDString);
+              [self CBUUIDToString:serviceUUID],
+              p.identifier.UUIDString);
         
         return;
     }
@@ -366,7 +366,7 @@ static int rssi = 0;
 }
 
 #if TARGET_OS_IPHONE
-    //-- no need for iOS
+//-- no need for iOS
 #else
 - (BOOL) isLECapableHardware
 {
@@ -396,7 +396,7 @@ static int rssi = 0;
     }
     
     NSLog(@"Central manager state: %@", state);
-        
+    
     NSAlert *alert = [[NSAlert alloc] init];
     [alert setMessageText:state];
     [alert addButtonWithTitle:@"OK"];
@@ -506,9 +506,9 @@ static int rssi = 0;
     else
     {
         NSLog(@"Error in setting notification state for characteristic with UUID %@ on service with UUID %@ on peripheral with UUID %@",
-               [self CBUUIDToString:characteristic.UUID],
-               [self CBUUIDToString:characteristic.service.UUID],
-               peripheral.identifier.UUIDString);
+              [self CBUUIDToString:characteristic.UUID],
+              [self CBUUIDToString:characteristic.service.UUID],
+              peripheral.identifier.UUIDString);
         
         NSLog(@"Error code was %s", [[error description] cStringUsingEncoding:NSStringEncodingConversionAllowLossy]);
     }
